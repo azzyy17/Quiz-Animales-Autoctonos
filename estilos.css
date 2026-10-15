@@ -1,0 +1,1171 @@
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap');
+
+:root {
+    --bosque: #173f35;
+    --bosque-oscuro: #102e27;
+    --verde: #b9d77a;
+    --lima: #d8ee9c;
+    --arena: #f5f0e5;
+    --papel: #fffdf7;
+    --tinta: #203a30;
+    --naranja: #e58b53;
+    --muted: #758279;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    overflow-x: hidden;
+    background: var(--arena);
+    color: var(--tinta);
+    font-family: 'DM Sans', Arial, sans-serif;
+    position: relative;
+}
+
+button {
+    font: inherit;
+}
+
+.decoracion {
+    position: absolute;
+    pointer-events: none;
+    border-radius: 50%;
+    z-index: -1;
+}
+
+.decoracion-uno {
+    width: 400px;
+    height: 400px;
+    top: 100px;
+    right: -230px;
+    border: 1px solid rgba(23, 63, 53, .12);
+    box-shadow:
+        0 0 0 30px rgba(23, 63, 53, .025),
+        0 0 0 60px rgba(23, 63, 53, .025);
+}
+
+.decoracion-dos {
+    width: 280px;
+    height: 280px;
+    top: 650px;
+    left: -200px;
+    background: rgba(185, 215, 122, .14);
+}
+
+/* ENCABEZADO */
+
+.encabezado {
+    min-height: 76px;
+    padding: 18px max(5%, calc((100% - 1180px) / 2));
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    background: var(--bosque);
+    color: white;
+}
+
+.marca {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    text-decoration: none;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    font-size: 17px;
+}
+
+.marca-icono {
+    display: grid;
+    place-items: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: var(--verde);
+    color: var(--bosque);
+    font-size: 25px;
+}
+
+.marca-claro {
+    color: var(--verde);
+}
+
+.etiqueta-superior {
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: #d7e6d9;
+}
+
+/* PRESENTACIÓN */
+
+.contenedor {
+    max-width: 1120px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.presentacion {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 35px;
+    padding: 55px 0 45px;
+}
+
+.presentacion-texto {
+    max-width: 690px;
+}
+
+.sobretitulo,
+.numero-seccion {
+    color: #63815c;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+h1 {
+    margin: 15px 0;
+    color: var(--bosque);
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(40px, 6vw, 65px);
+    line-height: 1.08;
+    letter-spacing: -1.5px;
+}
+
+.punto {
+    color: var(--naranja);
+}
+
+.presentacion-texto p {
+    max-width: 540px;
+    margin: 0;
+    color: #68776d;
+    line-height: 1.8;
+    font-size: 15px;
+}
+
+.insignia {
+    flex: 0 0 155px;
+    width: 155px;
+    height: 155px;
+    border: 1px solid #9cb58a;
+    outline: 1px solid #9cb58a;
+    outline-offset: 6px;
+    border-radius: 50%;
+    background: var(--verde);
+    color: var(--bosque);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    transform: rotate(7deg);
+}
+
+.insignia-hoja {
+    font-size: 27px;
+}
+
+.insignia > span:nth-child(2) {
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+.insignia strong {
+    text-align: center;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 16px;
+    line-height: 1.1;
+    margin: 4px 0;
+}
+
+.insignia-anio {
+    font-size: 8px;
+    letter-spacing: 1px;
+}
+
+/* PANEL PRINCIPAL */
+
+.panel-juego {
+    padding: 30px;
+    background: var(--papel);
+    border: 1px solid #e8e3d8;
+    border-radius: 24px;
+    box-shadow: 0 15px 45px rgba(41, 58, 43, .07);
+}
+
+.panel-cabecera {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.panel-cabecera h2 {
+    font-family: 'Playfair Display', Georgia, serif;
+    color: var(--bosque);
+    font-size: 27px;
+    margin: 8px 0 0;
+}
+
+.estado {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #617267;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    white-space: nowrap;
+}
+
+.estado-punto,
+.leyenda-punto {
+    width: 8px;
+    height: 8px;
+    background: #73a85a;
+    border-radius: 50%;
+}
+
+/* MARCADOR */
+
+.marcador {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin: 25px 0;
+    padding: 17px 22px;
+    border-radius: 14px;
+    background: #f0f3e8;
+}
+
+.dato {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex: 1;
+}
+
+.dato-icono {
+    font-size: 25px;
+    color: #6d8e48;
+}
+
+.dato > div {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.dato-titulo {
+    font-size: 9px;
+    letter-spacing: 1.4px;
+    font-weight: 800;
+    color: #718073;
+}
+
+.dato strong {
+    font-size: 23px;
+    color: var(--bosque);
+    font-variant-numeric: tabular-nums;
+}
+
+.separador {
+    width: 1px;
+    height: 37px;
+    background: #d9dfd0;
+}
+
+/* ZONA DEL JUEGO */
+
+.zona-juego {
+    display: grid;
+    grid-template-columns: minmax(300px, 1.1fr) minmax(250px, .9fr);
+    gap: 32px;
+    align-items: center;
+    padding: 10px 0 15px;
+}
+
+.ruleta-columna {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.leyenda-ruleta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 24px;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1.4px;
+    color: #758279;
+}
+
+.zona-ruleta {
+    position: relative;
+    width: 340px;
+    height: 350px;
+    max-width: 100%;
+}
+
+.flecha {
+    position: absolute;
+    top: -7px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 5;
+    font-size: 34px;
+    line-height: 1;
+    color: var(--naranja);
+    filter: drop-shadow(0 3px 0 var(--papel));
+}
+
+.ruleta {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 320px;
+    height: 320px;
+    transform: translateX(-50%);
+    border: 7px solid var(--papel);
+    border-radius: 50%;
+
+    background: conic-gradient(
+        from 0deg,
+        #d8e99d 0deg 90deg,
+        #e6a46e 90deg 180deg,
+        #86b8a0 180deg 270deg,
+        #e5d18e 270deg 360deg
+    );
+
+    box-shadow:
+        0 0 0 1px #d6d8c9,
+        0 12px 24px rgba(23, 63, 53, .15);
+
+    transition: transform 4s cubic-bezier(.17, .67, .12, .99);
+}
+
+/*
+    Cada etiqueta se ubica en el centro de su cuadrante.
+    Las etiquetas giran con la ruleta y JavaScript compensa
+    su orientación para mantener el texto legible.
+*/
+
+.etiqueta {
+    position: absolute;
+    width: 112px;
+    height: 48px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    text-align: center;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: .5px;
+    line-height: 1.2;
+    color: var(--bosque-oscuro);
+    pointer-events: none;
+    z-index: 1;
+    transform: translate(-50%, -50%) rotate(var(--contra-rotacion, 0deg));
+}
+
+.etiqueta-icono {
+    font-size: 19px;
+    line-height: 1;
+}
+
+.etiqueta-terrestre {
+    top: 25%;
+    left: 75%;
+}
+
+.etiqueta-aereo {
+    top: 75%;
+    left: 75%;
+}
+
+.etiqueta-acuatico {
+    top: 75%;
+    left: 25%;
+}
+
+.etiqueta-semi {
+    top: 25%;
+    left: 25%;
+}
+
+.centro {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 105px;
+    height: 105px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3px;
+    border-radius: 50%;
+    border: 5px solid var(--papel);
+    background: var(--bosque);
+    color: white;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .2);
+    z-index: 2;
+}
+
+.centro-simbolo {
+    font-size: 20px;
+    color: var(--verde);
+}
+
+.centro strong {
+    font-size: 10px;
+    letter-spacing: 1px;
+    line-height: 1.35;
+}
+
+.centro-linea {
+    width: 22px;
+    height: 2px;
+    background: var(--naranja);
+    margin-top: 3px;
+}
+
+.boton-girar {
+    margin-top: 25px;
+    border: none;
+    border-radius: 9px;
+    padding: 16px 28px;
+    background: var(--bosque);
+    color: white;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    box-shadow: 0 5px 0 var(--bosque-oscuro);
+    transition: .2s;
+}
+
+.boton-girar span {
+    margin-right: 8px;
+    font-size: 18px;
+    color: var(--verde);
+    vertical-align: -1px;
+}
+
+.boton-girar:hover:not(:disabled) {
+    background: #285a48;
+    transform: translateY(-2px);
+    box-shadow: 0 7px 0 var(--bosque-oscuro);
+}
+
+.boton-girar:disabled {
+    opacity: .55;
+    cursor: wait;
+}
+
+.nota-ruleta {
+    color: #879187;
+    font-size: 10px;
+    margin-top: 16px;
+}
+
+/* PANEL DE INSTRUCCIONES */
+
+.instrucciones {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 25px;
+    border-radius: 16px;
+    background: #f4f2e9;
+    border: 1px solid #e9e4d6;
+}
+
+.instrucciones h3 {
+    font-family: 'Playfair Display', Georgia, serif;
+    color: var(--bosque);
+    font-size: 27px;
+    margin: 13px 0 8px;
+}
+
+.instrucciones > p {
+    color: #68776d;
+    font-size: 13px;
+    line-height: 1.8;
+    margin: 0 0 22px;
+}
+
+.paso {
+    display: flex;
+    gap: 13px;
+    align-items: center;
+    padding: 13px 0;
+    border-top: 1px solid #e0e3d7;
+}
+
+.paso > span {
+    display: grid;
+    place-items: center;
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: #e1ebcf;
+    color: var(--bosque);
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.paso div {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.paso strong {
+    font-size: 12px;
+    color: var(--bosque);
+}
+
+.paso small {
+    font-size: 11px;
+    color: #788278;
+    line-height: 1.4;
+}
+
+.sello {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 15px 12px;
+    margin-top: 18px;
+    background: #e4ebd8;
+    border-radius: 10px;
+}
+
+.sello > span {
+    color: #6e8c48;
+    font-size: 25px;
+}
+
+.sello div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.sello strong {
+    font-size: 9px;
+    letter-spacing: .5px;
+    color: var(--bosque);
+}
+
+.sello small {
+    font-size: 10px;
+    color: #6c786b;
+    line-height: 1.4;
+}
+
+/* TARJETA DE PREGUNTA */
+
+.tarjeta {
+    margin-top: 25px;
+    padding: 28px;
+    border-radius: 16px;
+    border: 1px solid #e5e1d5;
+    background: #fbfaf5;
+    animation: aparecer .35s ease;
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.tarjeta-cabecera {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.categoria {
+    display: inline-block;
+    padding: 8px 13px;
+    background: #e3ebd5;
+    color: var(--bosque);
+    border-radius: 6px;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.etiqueta-mision {
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: #a17a51;
+}
+
+.tarjeta h3 {
+    font-family: 'Playfair Display', Georgia, serif;
+    color: var(--bosque);
+    font-size: 27px;
+    margin: 20px 0 8px;
+}
+
+.texto-pregunta {
+    color: #68776d;
+    line-height: 1.7;
+    font-size: 14px;
+}
+
+.opciones {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    margin-top: 22px;
+}
+
+.opcion {
+    min-height: 65px;
+    padding: 14px;
+    border: 1px solid #e0e4d8;
+    border-radius: 10px;
+    background: white;
+    color: var(--bosque);
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.opcion:hover:not(:disabled) {
+    border-color: #8da66c;
+    background: #f0f5e7;
+    transform: translateY(-2px);
+}
+
+.opcion:disabled {
+    cursor: default;
+}
+
+.opcion.correcta {
+    border-color: #4b8e54;
+    background: #e2f2dc;
+    color: #245c32;
+}
+
+.opcion.incorrecta {
+    border-color: #c96955;
+    background: #f9e6df;
+    color: #873b2e;
+}
+
+.panel-resultado {
+    margin-top: 22px;
+    padding: 18px;
+    border-radius: 10px;
+    background: #f0f3e8;
+}
+
+.resultado {
+    font-size: 15px;
+    font-weight: 800;
+    line-height: 1.6;
+    margin: 0 0 8px;
+}
+
+.explicacion {
+    color: #596b5e;
+    font-size: 13px;
+    line-height: 1.8;
+    margin: 0;
+}
+
+.boton-continuar {
+    margin-top: 18px;
+    padding: 13px 18px;
+    border: none;
+    border-radius: 7px;
+    background: var(--bosque);
+    color: white;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+.boton-continuar:hover {
+    background: #285a48;
+}
+
+.oculto {
+    display: none !important;
+}
+
+/* CIERRE Y CRÉDITOS */
+
+.franja-final {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    padding: 27px 10px;
+    color: #71816f;
+    text-align: center;
+}
+
+.franja-final > span {
+    color: #a6b985;
+    font-size: 20px;
+}
+
+.franja-final p {
+    font-size: 10px;
+    letter-spacing: 1.2px;
+    line-height: 1.7;
+}
+
+.franja-final strong {
+    color: var(--bosque);
+}
+
+.pie {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+    padding: 25px max(5%, calc((100% - 1120px) / 2));
+    background: var(--bosque);
+    color: white;
+}
+
+.pie > div {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.pie > div:first-child strong {
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    color: var(--verde);
+}
+
+.pie > div:first-child span {
+    font-size: 10px;
+    color: #c3d2c7;
+}
+
+.creditos {
+    text-align: right;
+}
+
+.creditos span {
+    color: #c3d2c7;
+    font-size: 9px;
+    letter-spacing: 1px;
+}
+
+.creditos strong {
+    font-size: 10px;
+    font-weight: 500;
+}
+
+/* DISEÑO ADAPTABLE */
+
+@media (max-width: 760px) {
+    .contenedor {
+        width: 92%;
+    }
+
+    .presentacion {
+        padding: 40px 0 35px;
+    }
+
+    .insignia {
+        flex-basis: 115px;
+        width: 115px;
+        height: 115px;
+    }
+
+    .insignia-hoja {
+        font-size: 20px;
+    }
+
+    .insignia strong {
+        font-size: 12px;
+    }
+
+    .insignia > span:nth-child(2),
+    .insignia-anio {
+        font-size: 7px;
+    }
+
+    .panel-juego {
+        padding: 22px;
+    }
+
+    .zona-juego {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .instrucciones {
+        padding: 22px;
+    }
+
+    .marcador {
+        gap: 12px;
+        padding: 15px;
+    }
+
+    .dato {
+        gap: 7px;
+    }
+
+    .dato-icono {
+        font-size: 19px;
+    }
+
+    .dato strong {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .encabezado {
+        padding: 16px 5%;
+    }
+
+    .marca {
+        font-size: 14px;
+    }
+
+    .etiqueta-superior {
+        font-size: 8px;
+        letter-spacing: 1px;
+        text-align: right;
+    }
+
+    .presentacion {
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .sobretitulo {
+        font-size: 8px;
+        letter-spacing: 1px;
+    }
+
+    h1 {
+        font-size: 39px;
+    }
+
+    .presentacion-texto p {
+        font-size: 13px;
+    }
+
+    .insignia {
+        flex-basis: 83px;
+        width: 83px;
+        height: 83px;
+        outline-offset: 3px;
+        margin-top: 25px;
+    }
+
+    .insignia-hoja {
+        font-size: 15px;
+    }
+
+    .insignia strong {
+        font-size: 9px;
+    }
+
+    .insignia > span:nth-child(2),
+    .insignia-anio {
+        font-size: 5px;
+    }
+
+    .panel-juego {
+        padding: 17px 13px;
+        border-radius: 17px;
+    }
+
+    .panel-cabecera {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .panel-cabecera h2 {
+        font-size: 23px;
+    }
+
+    .marcador {
+        gap: 8px;
+        padding: 13px 8px;
+    }
+
+    .dato {
+        justify-content: center;
+        gap: 5px;
+    }
+
+    .dato-icono {
+        font-size: 16px;
+    }
+
+    .dato-titulo {
+        font-size: 7px;
+        letter-spacing: .7px;
+    }
+
+    .dato strong {
+        font-size: 18px;
+    }
+
+    .separador {
+        height: 30px;
+    }
+
+    .zona-ruleta {
+        width: 300px;
+        height: 315px;
+    }
+
+    .ruleta {
+        width: 290px;
+        height: 290px;
+    }
+
+    .etiqueta {
+        width: 100px;
+        font-size: 9px;
+    }
+
+    .etiqueta-icono {
+        font-size: 17px;
+    }
+
+    .centro {
+        width: 92px;
+        height: 92px;
+    }
+
+    .centro strong {
+        font-size: 9px;
+    }
+
+    .tarjeta {
+        padding: 18px 13px;
+    }
+
+    .tarjeta h3 {
+        font-size: 23px;
+    }
+
+    .opciones {
+        grid-template-columns: 1fr;
+        gap: 9px;
+    }
+
+    .opcion {
+        min-height: 53px;
+    }
+
+    .franja-final {
+        gap: 8px;
+    }
+
+    .franja-final p {
+        font-size: 8px;
+    }
+
+    .pie {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 25px 6%;
+    }
+
+    .creditos {
+        text-align: left;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+    }
+}
+
+
+/* FICHA EDUCATIVA DEL ANIMAL */
+
+.ficha-animal {
+    margin-top: 18px;
+    padding: 20px;
+    background: #fffdf7;
+    border: 1px solid #dfe6d4;
+    border-radius: 14px;
+    color: #203a30;
+    text-align: left;
+    animation: aparecer .35s ease;
+}
+
+.ficha-titulo {
+    margin: 0 0 16px !important;
+    color: #173f35;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 23px !important;
+}
+
+.imagen-animal {
+    display: block;
+    width: 100%;
+    max-width: 480px;
+    max-height: 340px;
+    object-fit: cover;
+    margin: 0 auto 18px;
+    border-radius: 12px;
+    background: #e8ecdf;
+    box-shadow: 0 5px 18px rgba(23, 63, 53, .12);
+}
+
+.imagen-error {
+    min-height: 50px;
+    height: auto;
+    object-fit: contain;
+    box-shadow: none;
+}
+
+.ficha-animal p {
+    font-size: 13px;
+    line-height: 1.8;
+    color: #596b5e;
+    margin: 10px 0;
+}
+
+.ficha-animal p strong {
+    color: #173f35;
+}
+
+.curiosidad-animal {
+    margin-top: 16px !important;
+    padding: 13px;
+    background: #eaf0df;
+    border-left: 4px solid #8da66c;
+    border-radius: 5px;
+}
+
+@media (max-width: 480px) {
+    .ficha-animal {
+        padding: 14px;
+    }
+
+    .ficha-titulo {
+        font-size: 20px !important;
+    }
+
+    .imagen-animal {
+        max-height: 260px;
+    }
+}
+
+
+/* ENCICLOPEDIA DE FAUNA CORRENTINA */
+
+.ficha-animal {
+    margin-top: 22px;
+    padding: 24px;
+    background: #fffdf7;
+    border: 1px solid #d8e2d1;
+    border-radius: 18px;
+    color: #263c30;
+    text-align: left;
+    box-shadow: 0 8px 24px rgba(20, 48, 35, 0.08);
+    animation: aparecer .35s ease;
+}
+
+.ficha-titulo {
+    margin: 0 0 18px !important;
+    color: #254c38;
+    font-size: 25px !important;
+    line-height: 1.3;
+}
+
+.imagen-animal {
+    display: block;
+    width: 100%;
+    max-width: 520px;
+    max-height: 360px;
+    object-fit: cover;
+    margin: 0 auto 22px;
+    border-radius: 14px;
+    background: #e7ebdf;
+}
+
+.ficha-animal p {
+    margin: 10px 0;
+    padding: 10px 12px;
+    border-radius: 8px;
+    background: #f3f5ed;
+    color: #536458;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.ficha-animal p strong {
+    color: #254c38;
+}
+
+.ficha-animal .curiosidad-animal {
+    margin-top: 16px;
+    padding: 15px;
+    background: #e7f1df;
+    border-left: 4px solid #75985d;
+}
+
+@media (max-width: 480px) {
+    .ficha-animal {
+        padding: 15px;
+    }
+
+    .ficha-titulo {
+        font-size: 21px !important;
+    }
+
+    .imagen-animal {
+        max-height: 260px;
+    }
+}

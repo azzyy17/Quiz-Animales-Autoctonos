@@ -1,0 +1,282 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#173f35">
+
+    <title>CorrentinApp | Exploradores de la fauna</title>
+
+    <link rel="stylesheet" href="estilos.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <div class="decoracion decoracion-uno"></div>
+    <div class="decoracion decoracion-dos"></div>
+
+    <header class="encabezado">
+        <a href="#" class="marca">
+            <span class="marca-icono">✳</span>
+            <span>CORRENTIN<span class="marca-claro">APP</span></span>
+        </a>
+
+        <span class="etiqueta-superior">
+            EXPEDICIÓN NATURAL · 01
+        </span>
+    </header>
+
+    <main class="contenedor">
+
+        <section class="presentacion">
+            <div class="presentacion-texto">
+                <span class="sobretitulo">
+                    CUADERNO DE CAMPO / CORRIENTES, ARGENTINA
+                </span>
+
+                <h1>
+                    La fauna está<br>
+                    en tus manos<span class="punto">.</span>
+                </h1>
+
+                <p>
+                    Explorá hábitats, descubrí especies de todo el mundo
+                    y encontrá a los habitantes de nuestra provincia.
+                </p>
+            </div>
+
+            <div class="insignia" aria-label="Expedición de biodiversidad">
+                <span class="insignia-hoja">❋</span>
+                <span>EXPLORÁ</span>
+                <strong>LA<br>NATURALEZA</strong>
+                <span class="insignia-anio">EDICIÓN 2026</span>
+            </div>
+        </section>
+
+        <section class="panel-juego">
+
+            <div class="panel-cabecera">
+                <div>
+                    <span class="numero-seccion">
+                        01 / GIRAR Y DESCUBRIR
+                    </span>
+
+                    <h2>¿Quién es de Corrientes?</h2>
+                </div>
+
+                <div class="estado">
+                    <span class="estado-punto"></span>
+                    EXPEDICIÓN ACTIVA
+                </div>
+            </div>
+
+            <div class="marcador">
+                <div class="dato">
+                    <span class="dato-icono">✦</span>
+
+                    <div>
+                        <span class="dato-titulo">PUNTOS</span>
+                        <strong id="puntaje">000</strong>
+                    </div>
+                </div>
+
+                <div class="separador"></div>
+
+                <div class="dato">
+                    <span class="dato-icono">◎</span>
+
+                    <div>
+                        <span class="dato-titulo">PREGUNTAS</span>
+                        <strong id="contador">00</strong>
+                    </div>
+                </div>
+
+                <div class="separador"></div>
+
+                <div class="dato">
+                    <span class="dato-icono">✓</span>
+
+                    <div>
+                        <span class="dato-titulo">ACIERTOS</span>
+                        <strong id="aciertos">00</strong>
+                    </div>
+                </div>
+            </div>
+
+            <div class="zona-juego">
+
+                <div class="ruleta-columna">
+
+                    <div class="leyenda-ruleta">
+                        <span class="leyenda-punto"></span>
+                        LA SUERTE ELIGE EL HÁBITAT
+                    </div>
+
+                    <div class="zona-ruleta">
+                        <div class="flecha" aria-hidden="true">▼</div>
+
+                        <div id="ruleta" class="ruleta">
+
+                            <span class="etiqueta etiqueta-terrestre">
+                                <span class="etiqueta-icono">♧</span>
+                                TERRESTRE
+                            </span>
+
+                            <span class="etiqueta etiqueta-aereo">
+                                <span class="etiqueta-icono">⌁</span>
+                                AÉREO
+                            </span>
+
+                            <span class="etiqueta etiqueta-acuatico">
+                                <span class="etiqueta-icono">≋</span>
+                                ACUÁTICO
+                            </span>
+
+                            <span class="etiqueta etiqueta-semi">
+                                <span class="etiqueta-icono">◈</span>
+                                SEMIACUÁTICO
+                            </span>
+
+                            <div class="centro">
+                                <span class="centro-simbolo">✳</span>
+                                <strong>FAUNA<br>LOCAL</strong>
+                                <span class="centro-linea"></span>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <button id="botonGirar" class="boton-girar">
+                        <span>↻</span> GIRAR RULETA
+                    </button>
+
+                    <p class="nota-ruleta">
+                        Un giro · Un hábitat · Una especie local
+                    </p>
+
+                </div>
+
+                <aside class="instrucciones">
+                    <span class="numero-seccion">02 / TU MISIÓN</span>
+
+                    <h3>Ojos de explorador.</h3>
+
+                    <p>
+                        En cada ronda aparecerán cuatro animales.
+                        Solo uno pertenece a la fauna autóctona
+                        de Corrientes.
+                    </p>
+
+                    <div class="paso">
+                        <span>01</span>
+                        <div>
+                            <strong>Girás</strong>
+                            <small>
+                                Descubrís un hábitat al azar.
+                            </small>
+                        </div>
+                    </div>
+
+                    <div class="paso">
+                        <span>02</span>
+                        <div>
+                            <strong>Observás</strong>
+                            <small>
+                                Comparás cuatro especies.
+                            </small>
+                        </div>
+                    </div>
+
+                    <div class="paso">
+                        <span>03</span>
+                        <div>
+                            <strong>Elegís</strong>
+                            <small>
+                                Sumás 100 puntos si acertás.
+                            </small>
+                        </div>
+                    </div>
+
+                    <div class="sello">
+                        <span>✳</span>
+                        <div>
+                            <strong>CONOCER PARA CUIDAR</strong>
+                            <small>
+                                La biodiversidad es nuestro patrimonio.
+                            </small>
+                        </div>
+                    </div>
+                </aside>
+
+            </div>
+
+            <section
+                id="tarjetaPregunta"
+                class="tarjeta oculto"
+                aria-live="polite"
+            >
+                <div class="tarjeta-cabecera">
+                    <span id="categoria" class="categoria"></span>
+
+                    <span class="etiqueta-mision">
+                        MISIÓN DE CAMPO
+                    </span>
+                </div>
+
+                <h3 id="tema"></h3>
+
+                <p id="pregunta" class="texto-pregunta"></p>
+
+                <div id="opciones" class="opciones"></div>
+
+                <div
+                    id="panelResultado"
+                    class="panel-resultado oculto"
+                    aria-live="polite"
+                >
+                    <p id="resultado" class="resultado"></p>
+
+                    <div id="explicacion" class="explicacion"></div>
+
+                    <button
+                        id="botonContinuar"
+                        class="boton-continuar"
+                    >
+                        SIGUIENTE EXPEDICIÓN →
+                    </button>
+                </div>
+
+            </section>
+
+        </section>
+
+        <section class="franja-final">
+            <span>✳</span>
+
+            <p>
+                CADA ESPECIE CUENTA.
+                <strong>CADA DESCUBRIMIENTO TAMBIÉN.</strong>
+            </p>
+
+            <span>✳</span>
+        </section>
+
+    </main>
+
+    <footer class="pie">
+        <div>
+            <strong>CORRENTINAPP</strong>
+            <span>Laboratorio de Aplicaciones II · 2026</span>
+        </div>
+
+        <div class="creditos">
+            <span>DESARROLLADO POR</span>
+            <strong>Dante Teodoro Suarez Pared</strong>
+            <strong>Pablo Palacios Thomas</strong>
+            <span>5to 1ra</span>
+        </div>
+    </footer>
+
+</body>
+</html>
